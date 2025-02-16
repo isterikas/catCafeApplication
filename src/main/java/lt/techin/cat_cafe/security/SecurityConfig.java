@@ -21,8 +21,9 @@ public class SecurityConfig {
     http
             .authorizeHttpRequests(authorize -> authorize
                     .requestMatchers(HttpMethod.POST, "/api/reservations").hasRole("USER")
-                    .requestMatchers(HttpMethod.GET, "/api/cars").hasRole("ADMIN")
-                    .requestMatchers(HttpMethod.GET, "/api/cars/{id}").hasRole("ADMIN")
+                    .requestMatchers(HttpMethod.GET, "/adoptions/apply").hasRole("USER")
+                    .requestMatchers(HttpMethod.GET, "/adoptions").hasRole("USER")
+                    .requestMatchers(HttpMethod.GET, "/adoptions/pending").hasRole("ADMIN")
                     .requestMatchers(HttpMethod.GET, "/api/cars/available").permitAll()
                     .requestMatchers(HttpMethod.PUT, "/api/cars/{id}").hasRole("ADMIN")
                     .requestMatchers(HttpMethod.DELETE, "/api/cars/{id}").hasRole("ADMIN")

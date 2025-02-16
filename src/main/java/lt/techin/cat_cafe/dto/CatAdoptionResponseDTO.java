@@ -5,7 +5,7 @@ import lt.techin.cat_cafe.model.User;
 import java.time.LocalDateTime;
 
 public record CatAdoptionResponseDTO(long id,
-                                     User user,
+                                     UserResponseDTO user,
                                      String catName,
                                      String status,
                                      LocalDateTime applicationDate) {
